@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new</title>
+</head>
+<body>
+        <script>
+
+            const data = {
+                names: ['avi', 'shimi', 'rina'],
+                valid: [true, false, true],
+                ages: [25, 38, 23],
+                article: 'My string demo text',
+                status: 'Register'
+            };
+
+            const { article, status, names } = data;
+
+            // output My string demo text
+            console.log(article);
+
+            // output Register
+            console.log(status);
+
+            console.log(names[1]);
+
+
+              const user = {
+                    id: 16,
+                    city: 'Tel Aviv',
+                    phoneAndCode: '039998877'
+                };
+
+                const { phoneAndCode: pac } = user;
+                
+
+                // output 039998877
+                console.log(pac);
+
+                 
+        const users = [
+            { name: 'avi', age: 26 },
+            { name: 'moshe', age: 17 }
+        ];
+
+        for (let user of users) {
+            
+            console.log(user.name, user.age);
+         }
+
+        const nums1 = [10, 20, 30];
+        const nums2 = [40, 50];
+
+        const all = [...nums1, ...nums2];
+
+    // output 30
+    console.log(all);
+
+     const user1 = {
+            name: 'Avi',
+            id: 26
+        };
+
+        const address = {
+            country: 'Israel',
+            city: 'Tel Aviv',
+            street: 'Begin 8'
+        };
+
+        const details = { ...user1, ...address, phone: '036669987' };
+        console.log(details);
+
+        const other = { ...user1 };
+        console.log(other);
+
+        const calc = (num1, num2) => num1 + num2;
+        console.log(calc(1,2));
+
+        function doSomthing(){
+            alert(user3);
+            var user3 = 'moshe';
+        };
+        
+
+    var data1 = {
+        a: 1,
+        b: 2
+    };
+
+    data1.c = 3;
+    var x = '';
+    var y = 0;
+
+    for (var prop in data1) {
+        x += prop;
+        y += data1[prop];
+    }
+
+    console.log(x + y); 
+
+
+
+    var request = {
+        url: null,
+        get: function (property) {
+            return this[property];
+        }
+    };
+
+    var a = 'url';
+    request.url = 'face.com';
+    var res = request.get(a);
+    console.log(res);      
+
+    var mispar = mispar ?? null ;
+    { console.log(mispar); }
+    
+
+    const add=(nuo1=0, nuo2=0)=>{
+        return{nuo1, nuo2, sum: nuo1+nuo2};
+    }
+    const {sum}= add(1,4)
+    console.log(sum);
+
+    var text1 = null;
+    {text1 ?? 'hello'};
+    console.log(text1);
+        </script>
+</body>
+</html>

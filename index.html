@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cities" id="telAviv">Tel Aviv</div>
+    <div class="cities" id="haifa">Haifa</div>
+    <p>Hello from paragraph</p>
+    <button id="clickBtn">Click</button>
+
+
+
+
+    <script>
+        // DOM
+        //getElementsByClassName
+        let cities = document.getElementsByClassName("cities");
+        for (let city of cities) city.style.backgroundColor = "yellow";
+
+        //getElementsByTagName
+        let pArr = document.getElementsByTagName("p");
+        for(let p of pArr) p.style.color = "red";
+
+        //createElement
+        let textInput = document.createElement("input");
+
+        //setAttribute
+        textInput.setAttribute("value", "dorin")
+
+        //appendChild
+        document.querySelector("#haifa").appendChild(textInput);
+
+        document.write("<div>Dorin</div>")
+
+        //addEventListener
+        document.getElementById("clickBtn")
+        .addEventListener("click", ()=> alert("you clicked the button"))
+
+        document.getElementById("telAviv").addEventListener(
+                "mouseover",
+                () =>
+                    (document.getElementById("telAviv").style.backgroundColor = "green")
+            );
+        document.getElementById("telAviv").addEventListener(
+                "mouseleave",
+                () =>
+                    (document.getElementById("telAviv").style.backgroundColor = "yellow")
+            );
+
+
+            //Nan
+            console.log(Math.sqrt(36));
+            console.log(Math.sqrt("36"));
+            console.log(Math.sqrt("abc"));
+            console.log(isNaN(9));
+            console.log(isNaN("9"));
+            console.log(isNaN("you"));
+
+            let x = 7;
+            let y = "12";
+            console.log(typeof x == "string");
+            console.log(typeof y == "string");
+
+
+            //rest parameter
+            //...args
+            function printush(...args) {
+                for (let arg of args) {
+                    console.log(arg);
+                }
+            }
+            printush(12)
+            let myArr = [15, 4, 22]
+            printush(41, 13, 78, [74, 89])
+            printush(...myArr)
+
+            console.log(Math.max(12, 51, 7));
+        
+            // nullish operator
+            let amount = document.getElementById("amount")
+            amount = amount ?? 0;
+            console.log(amount);
+
+            // ternary
+            console.log(isNaN(7) ? 10 : 500);
+            
+            // object destructuring השם חשוב
+            let data = {
+                company: "Intel",
+                amountOfEmps: 30000,
+            };
+            let { company } = data;
+            console.log(company);
+
+            //array destructuring הסדר חשוב
+            let arrayi = [10,true]
+            let [item1, item2] = arrayi;
+            console.log(item2);
+
+            //classes
+            class Person {
+                constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+                sleep() {
+                    console.log(`${this.name} is sleeping`);
+                }
+                eat() {
+                    console.log(`${this.name} is eating`);
+                }
+            }
+             class Employee extends Person {
+                    constructor(name, age, department) {
+                        super(name, age)
+                        this.department = department
+                    }
+                    work() {
+                        console.log(`${this.name} is working`);
+                    }
+                    eat() {
+                        // call father eat method
+                        super.eat()
+                        console.log(`${this.name} is in brake until 14:00`);
+
+                    }
+                }
+                
+            let p = new Person("David Polak", 21);
+                let e = new Employee("Netanel Amar", 22, "vegetables");
+                p.eat();
+                e.eat();
+
+
+   
+
+
+    </script>
+</body>
+</html>
